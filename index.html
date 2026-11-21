@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>纸上唐诗 · 隐私政策与技术支持</title>
+  <style>
+    :root {
+      --paper: #F6F2E9;
+      --surface: #FCF9F2;
+      --ink: #1F1D1A;
+      --muted: #686258;
+      --line: #E1DACE;
+      --red: #9E3629;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
+      line-height: 1.85;
+    }
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 36px 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .seal {
+      display: inline-block;
+      padding: 2px 7px;
+      border: 1px solid var(--red);
+      color: var(--red);
+      font-size: 12px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+    h1 { font-size: 26px; font-weight: 500; margin: 12px 0 6px; }
+    h2 {
+      font-size: 17px;
+      font-weight: 500;
+      margin: 28px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    p, li { color: var(--muted); font-size: 14.5px; }
+    ul { padding-left: 20px; }
+    .meta { font-size: 12px; color: #9C9486; }
+    button.reveal {
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 5px 12px;
+      cursor: pointer;
+    }
+    button.reveal:hover { border-color: var(--red); color: var(--red); }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="seal">纸上唐诗</span>
+    <h1>纸上唐诗 · 隐私政策与技术支持</h1>
+    <p class="meta">版本：1.0.0 · 更新日期：2026 年 11 月</p>
+
+    <h2>隐私政策（Privacy Policy）</h2>
+    <p>「纸上唐诗」是一款完全离线运行的唐诗三百首阅读、赏析与背诵应用。我们高度重视您的隐私：</p>
+    <ul>
+      <li><strong>不收集任何个人数据</strong>：本应用无需注册账号，不包含广告、统计分析或第三方追踪 SDK，也不会将您的任何阅读、收藏、摘句或背诵记录上传至任何服务器。</li>
+      <li><strong>纯本地存储</strong>：您的收藏、书签、圈点摘句、温习计划与阅读偏好仅保存在您设备本地数据库中，卸载应用后将随之清除。</li>
+      <li><strong>相册权限说明</strong>：仅当您主动使用「诗笺成图」功能保存图片到相册或从相册自选背景图时，系统会请求相应的相册写入权限或调用系统照片选择器；图片处理完全在设备本地完成，不上传网络。</li>
+      <li><strong>应用内购买</strong>：本应用的一次性买断内购完全由 Apple App Store（StoreKit 2）安全处理与本地验证，我们不会获取或存储您的任何支付或 Apple ID 信息。</li>
+    </ul>
+
+    <h2>技术支持（Support）</h2>
+    <p>如您在使用过程中发现字音校勘建议、购买恢复问题或功能建议，欢迎联系我们：</p>
+    <ul>
+      <li>支持邮箱：<span id="contact-slot"><button class="reveal" type="button" onclick="revealEmail()">点击显示支持邮箱</button></span></li>
+    </ul>
+
+    <h2>English Summary (Privacy &amp; Support)</h2>
+    <p><strong>Tang Poetry on Paper (纸上唐诗)</strong> is a completely offline Chinese classical poetry reading and study app designed for Chinese-language readers worldwide.</p>
+    <ul>
+      <li><strong>No Data Collection</strong>: The app requires no account, contains no ads, analytics, or third-party tracking SDKs, and never transmits any personal or usage data to any server.</li>
+      <li><strong>Local Storage Only</strong>: Bookmarks, favorites, highlights, reading preferences, and review schedules are stored exclusively on your device and removed if you uninstall the app.</li>
+      <li><strong>Photo Library Access</strong>: Used solely on-device when you explicitly choose to save a generated poetry card image to Photos or select a background photo from your library via the system photo picker.</li>
+      <li><strong>In-App Purchase</strong>: The optional one-time unlock is processed and verified exclusively by Apple App Store via StoreKit 2.</li>
+      <li><strong>Support</strong>: Click the button above to reveal the support email address for inquiries, bug reports, or purchase assistance.</li>
+    </ul>
+  </main>
+  <script>
+    function revealEmail() {
+      var u = ["yangrong", "163mail"].join("");
+      var d = ["163", "com"].join(".");
+      var addr = u + String.fromCharCode(64) + d;
+      var slot = document.getElementById("contact-slot");
+      slot.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
+    }
+  </script>
+</body>
+</html>
