@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>纸上唐诗 · 隐私政策与技术支持</title>
+  <title>纸上唐诗 · Tang Poetry — Privacy Policy &amp; Support</title>
   <style>
     :root {
       --paper: #F6F2E9;
@@ -17,7 +17,7 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
+      font-family: "Songti SC", "Songti TC", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
       line-height: 1.85;
     }
     main {
@@ -28,6 +28,13 @@
       border: 1px solid var(--line);
       border-radius: 4px;
     }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
     .seal {
       display: inline-block;
       padding: 2px 7px;
@@ -37,7 +44,26 @@
       border-radius: 2px;
       letter-spacing: 1px;
     }
-    h1 { font-size: 26px; font-weight: 500; margin: 12px 0 6px; }
+    .lang-tabs {
+      display: inline-flex;
+      gap: 6px;
+    }
+    .lang-btn {
+      font-family: inherit;
+      font-size: 12px;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 3px 9px;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      color: var(--red);
+      border-color: var(--red);
+      background: var(--paper);
+    }
+    h1 { font-size: 26px; font-weight: 500; margin: 14px 0 6px; }
     h2 {
       font-size: 17px;
       font-weight: 500;
@@ -61,47 +87,103 @@
     button.reveal:hover { border-color: var(--red); color: var(--red); }
     a { color: var(--red); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .lang-panel { display: none; }
+    .lang-panel.active { display: block; }
   </style>
 </head>
 <body>
   <main>
-    <span class="seal">纸上唐诗</span>
-    <h1>纸上唐诗 · 隐私政策与技术支持</h1>
-    <p class="meta">版本：1.0.0 · 更新日期：2026 年 11 月</p>
+    <div class="top-bar">
+      <span class="seal" id="brand-seal">纸上唐诗</span>
+      <div class="lang-tabs" role="tablist">
+        <button class="lang-btn" data-lang="zh-Hans" onclick="setLang('zh-Hans')">简体中文</button>
+        <button class="lang-btn" data-lang="zh-Hant" onclick="setLang('zh-Hant')">繁體中文</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+      </div>
+    </div>
 
-    <h2>隐私政策（Privacy Policy）</h2>
-    <p>「纸上唐诗」是一款完全离线运行的唐诗三百首阅读、赏析与背诵应用。我们高度重视您的隐私：</p>
-    <ul>
-      <li><strong>不收集任何个人数据</strong>：本应用无需注册账号，不包含广告、统计分析或第三方追踪 SDK，也不会将您的任何阅读、收藏、摘句或背诵记录上传至任何服务器。</li>
-      <li><strong>纯本地存储</strong>：您的收藏、书签、圈点摘句、温习计划与阅读偏好仅保存在您设备本地数据库中，卸载应用后将随之清除。</li>
-      <li><strong>相册权限说明</strong>：仅当您主动使用「诗笺成图」功能保存图片到相册或从相册自选背景图时，系统会请求相应的相册写入权限或调用系统照片选择器；图片处理完全在设备本地完成，不上传网络。</li>
-      <li><strong>应用内购买</strong>：本应用的一次性买断内购完全由 Apple App Store（StoreKit 2）安全处理与本地验证，我们不会获取或存储您的任何支付或 Apple ID 信息。</li>
-    </ul>
+    <section class="lang-panel" id="panel-zh-Hans">
+      <h1>纸上唐诗 · 隐私政策与技术支持</h1>
+      <p class="meta">版本：1.1.0 · 更新日期：2026 年 11 月</p>
+      <h2>隐私政策</h2>
+      <p>「纸上唐诗」是一款完全离线运行的唐诗三百首阅读、赏析与背诵应用，支持简体中文、繁體中文与 English 界面。我们高度重视您的隐私：</p>
+      <ul>
+        <li><strong>不收集任何个人数据</strong>：本应用无需注册账号，不包含广告、统计分析或第三方追踪 SDK，也不会将您的任何阅读、收藏、摘句或背诵记录上传至任何服务器。</li>
+        <li><strong>纯本地存储</strong>：您的收藏、书签、圈点摘句、温习计划与阅读偏好仅保存在您设备本地数据库中，卸载应用后将随之清除。</li>
+        <li><strong>相册权限说明</strong>：仅当您主动使用「诗笺成图」功能保存图片到相册或从相册自选背景图时，系统会请求相应的相册写入权限或调用系统照片选择器；图片处理完全在设备本地完成，不上传网络。</li>
+        <li><strong>应用内购买</strong>：本应用的一次性买断内购完全由 Apple App Store（StoreKit 2）安全处理与本地验证，我们不会获取或存储您的任何支付或 Apple ID 信息。</li>
+      </ul>
+      <h2>技术支持</h2>
+      <p>如您在使用过程中发现字音校勘建议、翻译改进、购买恢复问题或功能建议，欢迎联系我们：</p>
+      <ul>
+        <li>支持邮箱：<span class="contact-slot"><button class="reveal" type="button" onclick="revealEmail()">点击显示支持邮箱</button></span></li>
+      </ul>
+    </section>
 
-    <h2>技术支持（Support）</h2>
-    <p>如您在使用过程中发现字音校勘建议、购买恢复问题或功能建议，欢迎联系我们：</p>
-    <ul>
-      <li>支持邮箱：<span id="contact-slot"><button class="reveal" type="button" onclick="revealEmail()">点击显示支持邮箱</button></span></li>
-    </ul>
+    <section class="lang-panel" id="panel-zh-Hant">
+      <h1>紙上唐詩 · 隱私權政策與技術支援</h1>
+      <p class="meta">版本：1.1.0 · 更新日期：2026 年 11 月</p>
+      <h2>隱私權政策</h2>
+      <p>「紙上唐詩」是一款完全離線運行的唐詩三百首閱讀、賞析與背誦應用，支援简体中文、繁體中文與 English 介面。我們高度重視您的隱私：</p>
+      <ul>
+        <li><strong>不收集任何個人資料</strong>：本應用無須註冊帳號，不包含廣告、統計分析或第三方追蹤 SDK，也不會將您的任何閱讀、收藏、摘句或背誦紀錄上傳至任何伺服器。</li>
+        <li><strong>純本機儲存</strong>：您的收藏、書籤、圈點摘句、溫習計畫與閱讀偏好僅保存在您裝置本機資料庫中，移除應用後將隨之清除。</li>
+        <li><strong>相簿權限說明</strong>：僅當您主動使用「詩箋成圖」功能儲存圖片到相簿或從相簿自選背景圖時，系統會請求相應的相簿寫入權限或呼叫系統照片選擇器；圖片處理完全在裝置本機完成，不上傳網路。</li>
+        <li><strong>應用程式內購買</strong>：本應用的一次性買斷內購完全由 Apple App Store（StoreKit 2）安全處理與本機驗證，我們不會取得或儲存您的任何付款或 Apple ID 資訊。</li>
+      </ul>
+      <h2>技術支援</h2>
+      <p>如您在使用過程中發現字音校勘建議、翻譯改進、購買恢復問題或功能建議，歡迎聯絡我們：</p>
+      <ul>
+        <li>支援信箱：<span class="contact-slot"><button class="reveal" type="button" onclick="revealEmail()">點擊顯示支援信箱</button></span></li>
+      </ul>
+    </section>
 
-    <h2>English Summary (Privacy &amp; Support)</h2>
-    <p><strong>Tang Poetry on Paper (纸上唐诗)</strong> is a completely offline Chinese classical poetry reading and study app designed for Chinese-language readers worldwide.</p>
-    <ul>
-      <li><strong>No Data Collection</strong>: The app requires no account, contains no ads, analytics, or third-party tracking SDKs, and never transmits any personal or usage data to any server.</li>
-      <li><strong>Local Storage Only</strong>: Bookmarks, favorites, highlights, reading preferences, and review schedules are stored exclusively on your device and removed if you uninstall the app.</li>
-      <li><strong>Photo Library Access</strong>: Used solely on-device when you explicitly choose to save a generated poetry card image to Photos or select a background photo from your library via the system photo picker.</li>
-      <li><strong>In-App Purchase</strong>: The optional one-time unlock is processed and verified exclusively by Apple App Store via StoreKit 2.</li>
-      <li><strong>Support</strong>: Click the button above to reveal the support email address for inquiries, bug reports, or purchase assistance.</li>
-    </ul>
+    <section class="lang-panel" id="panel-en">
+      <h1>Tang Poetry · Privacy Policy &amp; Support</h1>
+      <p class="meta">Version: 1.1.0 · Updated: November 2026</p>
+      <h2>Privacy Policy</h2>
+      <p><strong>Tang Poetry (纸上唐诗)</strong> is a completely offline reading, commentary, and memorization companion for <em>300 Tang Poems</em>, available in Simplified Chinese, Traditional Chinese, and English. We respect your privacy:</p>
+      <ul>
+        <li><strong>No Personal Data Collected</strong>: The app requires no account, contains no ads, analytics, or third-party tracking SDKs, and never transmits your reading history, favorites, excerpts, or study schedules to any server.</li>
+        <li><strong>On-Device Storage Only</strong>: Bookmarks, favorites, saved excerpts, reading preferences, and spaced-review plans are stored exclusively in a local database on your device and deleted when you uninstall the app.</li>
+        <li><strong>Photo Library Access</strong>: Requested solely on-device when you explicitly save a Poetry Card image to Photos or select a custom background image via the system photo picker. All image rendering happens offline on your device.</li>
+        <li><strong>In-App Purchase</strong>: The optional one-time “Paper Atelier” unlock is processed and verified exclusively by Apple App Store via StoreKit 2. We never access or store your payment details or Apple ID.</li>
+      </ul>
+      <h2>Support</h2>
+      <p>For pronunciation or translation feedback, purchase restoration assistance, or feature suggestions, please reach out:</p>
+      <ul>
+        <li>Support Email: <span class="contact-slot"><button class="reveal" type="button" onclick="revealEmail()">Show Support Email</button></span></li>
+      </ul>
+    </section>
   </main>
   <script>
+    var seals = { 'zh-Hans': '纸上唐诗', 'zh-Hant': '紙上唐詩', 'en': 'Tang Poetry' };
+    function setLang(lang) {
+      document.querySelectorAll('.lang-panel').forEach(function (el) {
+        el.classList.toggle('active', el.id === 'panel-' + lang);
+      });
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      document.getElementById('brand-seal').textContent = seals[lang] || 'Tang Poetry';
+      document.documentElement.lang = lang;
+    }
     function revealEmail() {
       var u = ["yangrong", "163mail"].join("");
       var d = ["163", "com"].join(".");
       var addr = u + String.fromCharCode(64) + d;
-      var slot = document.getElementById("contact-slot");
-      slot.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
+      document.querySelectorAll('.contact-slot').forEach(function (slot) {
+        slot.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
+      });
     }
+    (function init() {
+      var nav = (navigator.language || '').toLowerCase();
+      if (nav.indexOf('zh') === 0) {
+        setLang(nav.indexOf('tw') >= 0 || nav.indexOf('hk') >= 0 || nav.indexOf('mo') >= 0 || nav.indexOf('hant') >= 0 ? 'zh-Hant' : 'zh-Hans');
+      } else {
+        setLang('en');
+      }
+    })();
   </script>
 </body>
 </html>
